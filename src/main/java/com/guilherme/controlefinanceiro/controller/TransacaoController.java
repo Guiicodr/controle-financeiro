@@ -5,6 +5,8 @@ import com.guilherme.controlefinanceiro.service.TransacaoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -33,6 +35,11 @@ public class TransacaoController {
     @GetMapping("/transacoes/saldo")
     public double saldo(){
         return service.calcularSaldo();
+    }
+
+    @DeleteMapping("transacoes/{id}")
+    public void deletar(@PathVariable Long id){
+        service.deletar(id);
     }
 
 }

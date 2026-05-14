@@ -37,4 +37,6 @@ public class TransacaoService {
         }
         return saldo;
     }
+    public void deletar(Long id){
+        repository.deleteById(id);}
 }
